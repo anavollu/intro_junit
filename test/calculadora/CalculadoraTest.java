@@ -28,12 +28,14 @@ public class CalculadoraTest {
 		Assertions.assertEquals(9, soma);		
 	}
 	
+	@DisplayName("Testa a divisão de dois números")
 	@Test
 	public void testDivisaoDoisNumeros() {
 		int divisao = calc.divisao(8, 4);
 		assertTrue(divisao == 2);
 	}
 	
+	@DisplayName("Testa a divisão por zero")
 	@Test
 	public void testDivisaoPorZero() {
 		try {
@@ -44,10 +46,43 @@ public class CalculadoraTest {
 		}		
 	}
 	
+	@DisplayName("Testa a divisão por zero com Exception")	
 	@Test
 	public void testDivisaoPorZeroComAssertThrows() {
 		assertThrows(ArithmeticException.class,
 				() -> calc.divisao(8, 0));
 	}
 
+	@DisplayName("Testa a comparação entre dois números")
+	@Test
+	public void testComparaDoisNumeros() {
+		Assertions.assertEquals(0, calc.compara(2, 2));		
+	}
+	
+	@DisplayName("Testa se um número é positivo")
+	@Test
+	public void testNumeroEhPositivo() {	
+		Assertions.assertTrue(calc.ehPositivo(3));		
+	}
+	
+	@DisplayName("Testa a somatória")
+	@Test
+	public void testSomatoria() {
+		int somatoria = calc.somatoria(5);		
+		Assertions.assertEquals(15, somatoria);		
+	}
+	
+	@DisplayName("Testa a multiplicação de dois números")
+	@Test
+	public void testMultiplicacaoDoisNumeros() {
+		int multiplicacao = calc.multiplicacao(2, 5);		
+		Assertions.assertEquals(10, multiplicacao);		
+	}
+
+	@DisplayName("Testa a subtração de dois números")
+	@Test
+	public void testSubtracaoDoisNumeros() {
+		int subtracao = calc.subtracao(8, 4);
+		assertTrue(subtracao == 2);
+	}
 }
