@@ -82,7 +82,7 @@ public class CalculadoraTest {
 	@DisplayName("Testa a subtração de dois números")
 	@Test
 	public void testSubtracaoDoisNumeros() {
-		int subtracao = calc.subtracao(8, 4);
+		int subtracao = calc.subtracao(6, 4);
 		assertTrue(subtracao == 2);
 	}
 }
